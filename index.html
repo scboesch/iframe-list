@@ -16,9 +16,8 @@
         v-model="newUrl"
         placeholder="https://www.youtube.com/embed/iWZmdoY1aTE"
       /><br />
-      <button @click="go">Add video</button>
-
-      <div v-for="video in videos">
+      <button @click="go">Add video</button> <br />
+      <span v-for="video in videos">
         <iframe
           :src="video.url"
           width="300"
@@ -28,7 +27,7 @@
         ><br />
         {{video.title}} <button @click="video.show=false">Hide</button>
         <button @click="video.show=true">Show</button> <br />
-      </div>
+      </span>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
