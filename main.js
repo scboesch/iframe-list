@@ -8,24 +8,24 @@ var app = new Vue({
     newUrl: "",
     videos: [
       {
-        show: false,
-        title: "Chorus",
-        url: "https://www.youtube.com/embed/iWZmdoY1aTE?controls=0&amp;start=55"
+        show: true,
+        title: "Happier",
+        url: "https://www.youtube.com/embed/iWZmdoY1aTE"
       },
       {
         show: false,
-        title: "Beginning",
-        url: "https://www.youtube.com/embed/iWZmdoY1aTE"
+        title: "Happier - Chourus no controls",
+        url: "https://www.youtube.com/embed/iWZmdoY1aTE?controls=0&amp;start=55"
       }
     ]
   },
   methods: {
-    go: function() {
-      console.log("working");
+    addVideo: function() {
+      console.log("Adding video");
       var obj = {
         show: true,
         title: this.newTitle,
-        url: "https://www.youtube.com/embed/iWZmdoY1aTE"
+        url: this.newUrl
       };
       this.videos.push(obj);
     }
