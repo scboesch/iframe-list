@@ -14,7 +14,7 @@ var app = new Vue({
       },
       {
         show: false,
-        title: "Happier - Chourus no controls",
+        title: "Happier - Chorus no controls",
         url: "https://www.youtube.com/embed/iWZmdoY1aTE?controls=0&amp;start=55"
       }
     ]
