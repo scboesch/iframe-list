@@ -7,33 +7,31 @@
 
   <body>
     <div id="app">
-      You can add example videos like these to your list:
-      <ul>
-        <li>https://www.youtube.com/embed/lY2yjAdbvdQ</li>
-        <li>https://www.youtube.com/embed/dT2owtxkU8k</li>
-        <li>https://www.youtube.com/embed/hT_nvWreIhg</li>
-      </ul>
+      
 
-      Title: <input v-model="newTitle" size="50" placeholder="edit me" /><br />
+      Title: <input v-model="newTitle" size="50" placeholder="Enter Title" /><br />
       URL:
       <input
         v-model="newUrl"
         size="50"
-        placeholder="https://www.youtube.com/embed/iWZmdoY1aTE"
+        placeholder="Enter URL"
       /><br />
-      <button @click="addVideo">Add another video</button> <br />
+      <button @click="addVideo">Add video!</button> <br />
       <br />
-      Videos<br />
+      <h1>Videos</h1><br />
       <span v-for="video in videos">
         <iframe
           :src="video.url"
-          width="300"
-          height="200"
+          width="450"
+          height="300"
           v-if="video.show"
         ></iframe
         ><br />
-        {{video.title}} <button @click="video.show=false">Hide</button>
-        <button @click="video.show=true">Show</button> <br />
+		    {{video.title}}</br>
+        <button v-if="video.show" @click="video.show=false">Hide</button>
+        <button v-if="!video.show" @click="video.show=true">Show</button> 
+		    <button @click="deleteVideo(video)">Delete</button>
+        <br />
       </span>
       <! -- Exercise: 
          Only show the hide button when the video is shown.
