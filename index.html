@@ -33,7 +33,8 @@
         ></iframe
         ><br />
         {{video.title}} <button @click="video.show=false">Hide</button>
-        <button @click="video.show=true">Show</button> <br />
+        <button @click="video.show=true">Show</button>
+        <button @click = "deleteVideo(video)">Delete</button><br/>
       </span>
       <! -- Exercise: 
          Only show the hide button when the video is shown.
